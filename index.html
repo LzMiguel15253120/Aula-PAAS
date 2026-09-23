@@ -3,285 +3,692 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Futebol Brasil: notícias, jogos, classificação e times em uma página demonstrativa.">
-    <meta name="theme-color" content="#006b2d">
+
+    <meta
+        name="description"
+        content="Portal de futebol com notícias, jogos, classificação e times."
+    >
+
     <title>Futebol Brasil</title>
-    <!-- CSS -->
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <a class="skip-link" href="#conteudo-principal">
-        Pular para o conteúdo principal
-    </a>
-    <!-- CABEÇALHO -->
-    <header class="site-header">
-        <h1 class="site-title">
-            <span class="site-title-mark">⚽</span>
-            Futebol Brasil
-        </h1>
-        <nav class="site-nav" aria-label="Navegação principal">
-            <a href="#inicio">Início</a>
-            <a href="#noticias">Notícias</a>
-            <a href="#jogos">Jogos</a>
-            <a href="#tabela">Classificação</a>
-            <a href="#times">Times</a>
-        </nav>
-    </header>
-    <!-- BANNER -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h2 class="hero-title">
-                O mundo do futebol em um só lugar
-            </h2>
-            <p class="hero-description">
-                Notícias, jogos, resultados e classificação.
-            </p>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">⚽</span>
+                <span>Futebol Brasil</span>
+            </a>
+
+
+            <nav class="nav" id="nav">
+
+                <a href="#inicio" class="nav-link active">
+                    Início
+                </a>
+
+                <a href="#jogos" class="nav-link">
+                    Jogos
+                </a>
+
+                <a href="#noticias" class="nav-link">
+                    Notícias
+                </a>
+
+                <a href="#tabela" class="nav-link">
+                    Tabela
+                </a>
+
+                <a href="#times" class="nav-link">
+                    Times
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="theme-button"
+                    id="themeButton"
+                    aria-label="Alternar tema"
+                    title="Alternar tema"
+                >
+                    🌙
+                </button>
+
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+            </div>
+
         </div>
-    </section>
-    <main class="page-container" id="conteudo-principal">
-        <!-- NOTÍCIAS -->
-        <section id="noticias">
-            <h2 class="section-title">
-                ⚽ Últimas Notícias
-            </h2>
-            <div class="news-grid">
-                <article class="card">
-                    <picture>
-                        <img
-                            class="card-image"
-                            src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=75"
-                            alt="Jogadores disputando uma partida de futebol"
-                            loading="lazy"
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-tag">
+                        ⚡ PAIXÃO PELO FUTEBOL
+                    </span>
+
+
+                    <h1>
+                        Tudo sobre futebol
+                        <span>em um só lugar.</span>
+                    </h1>
+
+
+                    <p>
+                        Acompanhe jogos, notícias, classificação
+                        e os principais times do futebol brasileiro.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#jogos"
+                            class="button button-primary"
                         >
-                    </picture>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Grande jogo neste final de semana
-                        </h3>
-                        <p class="card-description">
-                            Exemplo fictício de chamada jornalística
-                            sobre uma rodada decisiva do campeonato.
-                        </p>
-                        <a class="action-link" href="#jogos">
                             Ver jogos
                         </a>
-                    </div>
-                </article>
-                <article class="card">
-                    <picture>
-                        <img
-                            class="card-image"
-                            src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=900&q=75"
-                            alt="Jogador comemorando durante uma partida"
-                            loading="lazy"
+
+                        <a
+                            href="#tabela"
+                            class="button button-secondary"
                         >
-                    </picture>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Craque marca golaço
-                        </h3>
-                        <p class="card-description">
-                            Exemplo fictício de notícia sobre um
-                            atacante que decidiu uma partida.
-                        </p>
-                        <a class="action-link" href="#tabela">
                             Ver classificação
                         </a>
+
                     </div>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <strong>20</strong>
+                        <span>Times</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>380</strong>
+                        <span>Jogos</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>1</strong>
+                        <span>Campeonato</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTEÚDO ================= -->
+
+        <div class="container">
+
+
+            <!-- ================= JOGO EM DESTAQUE ================= -->
+
+            <section class="section" id="jogos">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            FUTEBOL
+                        </span>
+
+                        <h2>
+                            Jogo em destaque
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <article class="featured-match">
+
+                    <div class="match-header">
+
+                        <span class="match-status">
+                            PRÓXIMO JOGO
+                        </span>
+
+                        <span class="match-date">
+                            22 SET • 20:00
+                        </span>
+
+                    </div>
+
+
+                    <div class="match-teams">
+
+                        <div class="match-team">
+
+                            <div class="team-logo flamengo">
+                                FLA
+                            </div>
+
+                            <h3>Flamengo</h3>
+
+                            <span>Mandante</span>
+
+                        </div>
+
+
+                        <div class="match-center">
+
+                            <span class="match-vs">
+                                VS
+                            </span>
+
+                            <div class="match-time">
+                                20:00
+                            </div>
+
+                            <small>
+                                Maracanã
+                            </small>
+
+                        </div>
+
+
+                        <div class="match-team">
+
+                            <div class="team-logo palmeiras">
+                                PAL
+                            </div>
+
+                            <h3>Palmeiras</h3>
+
+                            <span>Visitante</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="match-footer">
+
+                        <span>
+                            Campeonato Brasileiro
+                        </span>
+
+                        <button class="text-button">
+                            Detalhes →
+                        </button>
+
+                    </div>
+
                 </article>
-                <article class="card">
-                    <picture>
-                        <img
-                            class="card-image"
-                            src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=75"
-                            alt="Torcida comemorando no estádio"
-                            loading="lazy"
-                        >
-                    </picture>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Torcida faz festa
+
+            </section>
+
+
+            <!-- ================= NOTÍCIAS ================= -->
+
+            <section class="section" id="noticias">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            ATUALIDADES
+                        </span>
+
+                        <h2>
+                            Últimas notícias
+                        </h2>
+                    </div>
+
+                    <a href="#" class="see-all">
+                        Ver todas →
+                    </a>
+
+                </div>
+
+
+                <div class="news-grid">
+
+
+                    <article class="news-card">
+
+                        <div class="news-image image-1">
+                            <span>
+                                BRASILEIRÃO
+                            </span>
+                        </div>
+
+                        <div class="news-content">
+
+                            <small>
+                                Hoje • 10:30
+                            </small>
+
+                            <h3>
+                                Grande rodada promete
+                                fortes emoções
+                            </h3>
+
+                            <p>
+                                Os principais clubes entram
+                                em campo em uma rodada decisiva.
+                            </p>
+
+                            <a href="#" class="news-link">
+                                Ler notícia →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="news-card">
+
+                        <div class="news-image image-2">
+                            <span>
+                                MERCADO
+                            </span>
+                        </div>
+
+                        <div class="news-content">
+
+                            <small>
+                                Hoje • 09:15
+                            </small>
+
+                            <h3>
+                                Mercado da bola movimenta
+                                os grandes clubes
+                            </h3>
+
+                            <p>
+                                Clubes analisam novas
+                                contratações para a temporada.
+                            </p>
+
+                            <a href="#" class="news-link">
+                                Ler notícia →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="news-card">
+
+                        <div class="news-image image-3">
+                            <span>
+                                TORCIDA
+                            </span>
+                        </div>
+
+                        <div class="news-content">
+
+                            <small>
+                                Ontem • 21:40
+                            </small>
+
+                            <h3>
+                                Torcida prepara grande
+                                festa no estádio
+                            </h3>
+
+                            <p>
+                                Milhares de torcedores prometem
+                                acompanhar a partida.
+                            </p>
+
+                            <a href="#" class="news-link">
+                                Ler notícia →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TABELA ================= -->
+
+            <section class="section" id="tabela">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            CAMPEONATO
+                        </span>
+
+                        <h2>
+                            Classificação
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>#</th>
+                                <th>Time</th>
+                                <th>Pts</th>
+                                <th>J</th>
+                                <th>V</th>
+                                <th>E</th>
+                                <th>D</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td class="position first">1</td>
+                                <td class="club-name">Flamengo</td>
+                                <td>45</td>
+                                <td>20</td>
+                                <td>14</td>
+                                <td>3</td>
+                                <td>3</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="position second">2</td>
+                                <td class="club-name">Palmeiras</td>
+                                <td>42</td>
+                                <td>20</td>
+                                <td>13</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="position third">3</td>
+                                <td class="club-name">São Paulo</td>
+                                <td>39</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>3</td>
+                                <td>5</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="position">4</td>
+                                <td class="club-name">Corinthians</td>
+                                <td>37</td>
+                                <td>20</td>
+                                <td>11</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="position">5</td>
+                                <td class="club-name">Grêmio</td>
+                                <td>35</td>
+                                <td>20</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>5</td>
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TIMES ================= -->
+
+            <section class="section" id="times">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            CLUBES
+                        </span>
+
+                        <h2>
+                            Times
+                        </h2>
+
+                    </div>
+
+
+                    <input
+                        type="search"
+                        id="teamSearch"
+                        class="search"
+                        placeholder="Buscar time..."
+                        aria-label="Buscar time"
+                    >
+
+                </div>
+
+
+                <div class="teams-grid" id="teamsGrid">
+
+
+                    <article
+                        class="team-card"
+                        data-team="flamengo"
+                    >
+
+                        <div class="club-crest flamengo">
+                            FLA
+                        </div>
+
+                        <h3>
+                            Flamengo
                         </h3>
-                        <p class="card-description">
-                            Exemplo fictício de relato sobre
-                            torcedores acompanhando uma partida.
-                        </p>
-                        <a class="action-link" href="#times">
-                            Conhecer times
+
+                        <span>
+                            Rio de Janeiro
+                        </span>
+
+                        <a href="#jogos">
+                            Ver jogos →
                         </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- JOGOS -->
-        <section id="jogos">
-            <h2 class="section-title">
-                🏆 Próximos Jogos
-            </h2>
-            <div class="matches-grid">
-                <article class="match-card">
-                    <h3 class="match-date">
-                        15/09/2026
-                    </h3>
-                    <p>
-                        Flamengo x Palmeiras
-                    </p>
-                    <div class="match-score">
-                        20:00
-                    </div>
-                    <p class="match-venue">
-                        Maracanã
-                    </p>
-                    <a class="action-link" href="#tabela">
-                        Classificação
-                    </a>
-                </article>
-                <article class="match-card">
-                    <h3 class="match-date">
-                        16/09/2026
-                    </h3>
-                    <p>
-                        Corinthians x São Paulo
-                    </p>
-                    <div class="match-score">
-                        21:30
-                    </div>
-                    <p class="match-venue">
-                        Neo Química Arena
-                    </p>
-                    <a class="action-link" href="#tabela">
-                        Classificação
-                    </a>
-                </article>
-                <article class="match-card">
-                    <h3 class="match-date">
-                        17/09/2026
-                    </h3>
-                    <p>
-                        Grêmio x Internacional
-                    </p>
-                    <div class="match-score">
-                        19:00
-                    </div>
-                    <p class="match-venue">
-                        Arena do Grêmio
-                    </p>
-                    <a class="action-link" href="#tabela">
-                        Classificação
-                    </a>
-                </article>
-            </div>
-        </section>
-        <!-- TABELA -->
-        <section id="tabela">
-            <h2 class="section-title">
-                📊 Classificação
-            </h2>
-            <div class="standings-table-wrapper">
-                <table class="standings-table">
-                    <thead>
-                        <tr>
-                            <th>Pos.</th>
-                            <th>Time</th>
-                            <th>Pts</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Flamengo</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td>14</td>
-                            <td>3</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Palmeiras</td>
-                            <td>42</td>
-                            <td>20</td>
-                            <td>13</td>
-                            <td>3</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>São Paulo</td>
-                            <td>39</td>
-                            <td>20</td>
-                            <td>12</td>
-                            <td>3</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Corinthians</td>
-                            <td>37</td>
-                            <td>20</td>
-                            <td>11</td>
-                            <td>4</td>
-                            <td>5</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <!-- TIMES -->
-        <section id="times">
-            <h2 class="section-title">
-                ⚽ Times
-            </h2>
-            <div class="teams-grid">
-                <article class="team-card">
-                    <div class="team-crest team-crest--red-black">
-                    </div>
-                    <h3>Flamengo</h3>
-                    <a class="action-link" href="#tabela">
-                        Ver classificação
-                    </a>
-                </article>
-                <article class="team-card">
-                    <div class="team-crest team-crest--green-white">
-                    </div>
-                    <h3>Palmeiras</h3>
-                    <a class="action-link" href="#tabela">
-                        Ver classificação
-                    </a>
-                </article>
-                <article class="team-card">
-                    <div class="team-crest team-crest--white-black">
-                    </div>
-                    <h3>Corinthians</h3>
-                    <a class="action-link" href="#tabela">
-                        Ver classificação
-                    </a>
-                </article>
-                <article class="team-card">
-                    <div class="team-crest team-crest--red-white">
-                    </div>
-                    <h3>São Paulo</h3>
-                    <a class="action-link" href="#tabela">
-                        Ver classificação
-                    </a>
-                </article>
-            </div>
-        </section>
+
+                    </article>
+
+
+                    <article
+                        class="team-card"
+                        data-team="palmeiras"
+                    >
+
+                        <div class="club-crest palmeiras">
+                            PAL
+                        </div>
+
+                        <h3>
+                            Palmeiras
+                        </h3>
+
+                        <span>
+                            São Paulo
+                        </span>
+
+                        <a href="#jogos">
+                            Ver jogos →
+                        </a>
+
+                    </article>
+
+
+                    <article
+                        class="team-card"
+                        data-team="corinthians"
+                    >
+
+                        <div class="club-crest corinthians">
+                            COR
+                        </div>
+
+                        <h3>
+                            Corinthians
+                        </h3>
+
+                        <span>
+                            São Paulo
+                        </span>
+
+                        <a href="#jogos">
+                            Ver jogos →
+                        </a>
+
+                    </article>
+
+
+                    <article
+                        class="team-card"
+                        data-team="saopaulo"
+                    >
+
+                        <div class="club-crest saopaulo">
+                            SP
+                        </div>
+
+                        <h3>
+                            São Paulo
+                        </h3>
+
+                        <span>
+                            São Paulo
+                        </span>
+
+                        <a href="#jogos">
+                            Ver jogos →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
     </main>
 
-    <!-- RODAPÉ -->
-    <footer class="site-footer">
-        <p>
-            © 2026 Futebol Brasil |
-            Conteúdo demonstrativo, sem dados oficiais.
-        </p>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    <span class="logo-icon">⚽</span>
+                    Futebol Brasil
+                </div>
+
+                <p>
+                    Seu portal de futebol.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#jogos">
+                    Jogos
+                </a>
+
+                <a href="#noticias">
+                    Notícias
+                </a>
+
+                <a href="#tabela">
+                    Tabela
+                </a>
+
+                <a href="#times">
+                    Times
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span>
+                Futebol Brasil.
+                Conteúdo demonstrativo.
+            </p>
+
+        </div>
+
     </footer>
-    <!-- JavaScript -->
+
+
     <script src="script.js"></script>
+
 </body>
 </html>

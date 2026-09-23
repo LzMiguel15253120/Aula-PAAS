@@ -1,67 +1,257 @@
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('⚽ Futebol Brasil iniciado!');
-  // =====================================================
-  // ANO AUTOMÁTICO DO RODAPÉ
-  // =====================================================
-  const rodape = document.querySelector('.site-footer p');
-  if (rodape) {
-    const ano = new Date().getFullYear();
-    rodape.textContent = `© ${ano} Futebol Brasil | Conteúdo demonstrativo, sem dados oficiais.`;
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =================================================
+     ANO AUTOMÁTICO
+  ================================================= */
+
+  const year = document.getElementById("year");
+
+  if (year) {
+      year.textContent = new Date().getFullYear();
   }
-  // =====================================================
-  // MENU
-  // =====================================================
-  const linksMenu = document.querySelectorAll('.site-nav a');
-  linksMenu.forEach((link) => {
-    link.addEventListener('click', () => {
-      linksMenu.forEach((item) => {
-        item.classList.remove('ativo');
+
+
+  /* =================================================
+     MENU MOBILE
+  ================================================= */
+
+  const menuButton =
+      document.getElementById("menuButton");
+
+  const nav =
+      document.getElementById("nav");
+
+
+  menuButton.addEventListener("click", () => {
+
+      const aberto =
+          nav.classList.toggle("open");
+
+      menuButton.setAttribute(
+          "aria-expanded",
+          aberto
+      );
+
+      menuButton.textContent =
+          aberto ? "✕" : "☰";
+  });
+
+
+  /* =================================================
+     FECHAR MENU AO CLICAR
+  ================================================= */
+
+  const navLinks =
+      document.querySelectorAll(".nav-link");
+
+
+  navLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+          nav.classList.remove("open");
+
+          menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+          );
+
+          menuButton.textContent = "☰";
       });
-      link.classList.add('ativo');
-    });
+
   });
-  // =====================================================
-  // BOTÕES
-  // =====================================================
-  const botoes = document.querySelectorAll('.action-link');
-  botoes.forEach((botao) => {
-    botao.addEventListener('click', () => {
-      console.log('Ação:', botao.textContent.trim());
-    });
+
+
+  /* =================================================
+     TEMA CLARO / ESCURO
+  ================================================= */
+
+  const themeButton =
+      document.getElementById("themeButton");
+
+
+  const temaSalvo =
+      localStorage.getItem("tema");
+
+
+  if (temaSalvo === "light") {
+
+      document.body.classList.add("light");
+
+      themeButton.textContent = "☀️";
+  }
+
+
+  themeButton.addEventListener("click", () => {
+
+      document.body.classList.toggle("light");
+
+
+      const modoClaro =
+          document.body.classList.contains("light");
+
+
+      themeButton.textContent =
+          modoClaro ? "☀️" : "🌙";
+
+
+      localStorage.setItem(
+          "tema",
+          modoClaro ? "light" : "dark"
+      );
+
   });
-  // =====================================================
-  // ANIMAÇÃO AO ROLAR A PÁGINA
-  // =====================================================
-  const elementos = document.querySelectorAll('.card, .match-card, .team-card');
-  const observador = new IntersectionObserver(
-    (entradas) => {
-      entradas.forEach((entrada) => {
-        if (entrada.isIntersecting) {
-          entrada.target.style.opacity = '1';
-          entrada.target.style.transform = 'translateY(0)';
-          observador.unobserve(entrada.target);
-        }
+
+
+  /* =================================================
+     BUSCA DE TIMES
+  ================================================= */
+
+  const search =
+      document.getElementById("teamSearch");
+
+
+  const teams =
+      document.querySelectorAll(".team-card");
+
+
+  search.addEventListener("input", () => {
+
+      const texto =
+          search.value
+              .toLowerCase()
+              .trim();
+
+
+      teams.forEach(team => {
+
+          const nome =
+              team.dataset.team
+                  .toLowerCase();
+
+
+          if (nome.includes(texto)) {
+
+              team.style.display = "";
+
+          } else {
+
+              team.style.display = "none";
+          }
+
       });
-    },
-    {
-      threshold: 0.15,
-    }
-  );
-  elementos.forEach((elemento) => {
-    elemento.style.opacity = '0';
-    elemento.style.transform = 'translateY(30px)';
-    elemento.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observador.observe(elemento);
+
   });
-  // =====================================================
-  // EFEITO NO HEADER AO ROLAR
-  // =====================================================
-  const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.style.background = 'rgba(2, 14, 9, 0.97)';
-    } else {
-      header.style.background = 'rgba(4, 20, 12, 0.92)';
-    }
+
+
+  /* =================================================
+     ANIMAÇÃO AO ROLAR
+  ================================================= */
+
+  const elementos =
+      document.querySelectorAll(
+          ".section, .news-card, .team-card, .featured-match"
+      );
+
+
+  elementos.forEach(elemento => {
+
+      elemento.classList.add("reveal");
+
   });
+
+
+  const observer =
+      new IntersectionObserver(
+          entradas => {
+
+              entradas.forEach(entrada => {
+
+                  if (entrada.isIntersecting) {
+
+                      entrada.target.classList.add("show");
+
+                      observer.unobserve(
+                          entrada.target
+                      );
+                  }
+
+              });
+
+          },
+          {
+              threshold: 0.12
+          }
+      );
+
+
+  elementos.forEach(elemento => {
+
+      observer.observe(elemento);
+
+  });
+
+
+  /* =================================================
+     NAVEGAÇÃO ATIVA
+  ================================================= */
+
+  const sections =
+      document.querySelectorAll("main section");
+
+
+  window.addEventListener("scroll", () => {
+
+      let secaoAtual = "";
+
+
+      sections.forEach(section => {
+
+          const topo =
+              section.offsetTop - 150;
+
+
+          if (window.scrollY >= topo) {
+
+              secaoAtual =
+                  section.getAttribute("id");
+          }
+
+      });
+
+
+      navLinks.forEach(link => {
+
+          link.classList.remove("active");
+
+
+          if (
+              link.getAttribute("href") ===
+              `#${secaoAtual}`
+          ) {
+
+              link.classList.add("active");
+          }
+
+      });
+
+  });
+
+
+  /* =================================================
+     BOTÃO DE DETALHES
+  ================================================= */
+
+  const detailButton =
+      document.querySelector(".text-button");
+
+
+  detailButton.addEventListener("click", () => {
+
+      alert(
+          "Os detalhes da partida serão adicionados quando o site estiver conectado a uma API de futebol."
+      );
+
+  });
+
 });

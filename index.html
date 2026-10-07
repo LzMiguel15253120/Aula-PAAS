@@ -1,36 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backlog de Jogos</title>
-    <!-- Fontes do Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Game Backlog</h1>
-        </header>
-        
-        <div class="input-section">
-            <input type="text" id="gameInput" placeholder="Adicionar novo jogo...">
-            <button id="addBtn">Add</button>
-        </div>
-        
-        <div class="stats">
-            <span>Total: <span id="totalCount">0</span></span>
-            <span>Concluídos: <span id="completedCount">0</span></span>
-        </div>
-        
-        <ul id="gameList">
-            <!-- Os jogos aparecerão aqui via JavaScript -->
-        </ul>
-    </div>
-
-    <!-- Link para o arquivo JavaScript -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador de Palíndromos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>É um Palíndromo?</h1>
+      <input
+        type="text"
+        id="input-texto"
+        placeholder="Digite uma palavra ou frase"
+      />
+      <button onclick="verificar()">Verificar</button>
+      <p id="resultado"></p>
+    </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

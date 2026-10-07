@@ -3,9 +3,9 @@
     "start": "servor --reload"
   },
   "script": {
-    "test": "vitest run"
+    "test":"vitest run"
   },
-  "type": "module",
+  "type":"module",
   "dependencies": {
     "servor": "^4.0.2",
     "vitest": "^1.6.1"

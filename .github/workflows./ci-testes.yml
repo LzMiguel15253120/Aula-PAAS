@@ -1,0 +1,23 @@
+# Nome do workflow
+name: Teste Automatizado do Projeto
+# Gatilho: roda toda vez que um push é feito na branch 'main'
+on:
+push:
+branches: [ "main" ]
+jobs:
+# Nome do job
+testar-aplicacao:
+# Máquina virtual onde o teste será executado
+runs-on: ubuntu-latest
+steps:
+# 1. Clona o código do repositório para a máquina virtual
+- name: Checkout do código
+uses: actions/checkout@v4
+# 2. Configura o ambiente Node.js na versão 20
+- name: Configurar Node.js
+uses: actions/setup-node@v4
+with:
+node-version: '20'
+# 3. Executa o nosso script de teste
+- name: Rodar script de testes
+run: node teste.js

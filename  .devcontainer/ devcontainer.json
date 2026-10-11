@@ -1,0 +1,15 @@
+{
+    "name": "Ambiente Node.js para o Projeto Palíndromo",
+    // Define a imagem de contêiner pré-configurada da Microsoft com Node.js v20.
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
+    "customizations": {
+    "vscode": {
+    //Instala extensões úteis do VS Code automaticamente no ambiente.
+    "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+    ]
+    }
+    }
+    }
+    
